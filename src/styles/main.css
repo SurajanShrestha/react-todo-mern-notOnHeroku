@@ -1,8 +1,70 @@
+body{
+    padding: 10;
+    margin: 0;
+}
 .App{
     text-align: center;
 }
 .input-field{
     margin-right: 5px;
     padding: 10px 5px;
-    width: 30vw;
+    width: 30%;
+}
+.redBtn{
+    border: 1px solid crimson;
+    background-color: white;
+    color: crimson;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+.redBtn:hover{
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+}
+.blueBtn{
+    border: 1px solid royalblue;
+    background-color: white;
+    color: royalblue;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+.blueBtn:hover{
+    cursor: pointer;
+    background-color: royalblue;
+    color: white;
+}
+.tasksContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gainsboro;
+    width: 50%;
+    margin-left: 25%;
+    padding: 5px 0px;
+    margin-top: 5px;
+}
+@media screen and (max-width: 576px){
+    .tasksContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: gainsboro;
+        width: 90%;
+        margin-left: 5%;
+        padding: 5px 0px;
+        margin-top: 5px;
+    }   
+}
+.task{
+    width: fit-content;
+    background: gainsboro;
+}
+.task:hover{
+    color: slategray;
+}
+.deleteAllBtnContainer{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px;
 }
