@@ -1,6 +1,7 @@
 const express=require('express');
 const createAndSaveTask=require('../todoDbConfig').createAndSaveTask;
 const findAllTasks=require('../todoDbConfig').findAllTasks;
+const updateTask=require('../todoDbConfig').updateTask;
 const deleteTask=require('../todoDbConfig').deleteTask;
 const deleteAllTasks=require('../todoDbConfig').deleteAllTasks;
 
@@ -28,6 +29,15 @@ router.get("/getAllTasks",(req,res)=>{
         }
         res.send(data);
     });
+});
+
+router.post("/updateTask/:taskId",(req,res)=>{
+    updateTask((err,data)=>{
+        if(err){
+            res.send(err);
+        }
+        res.send(data);
+    }, req.params.taskId, req.body.task);
 });
 
 router.delete("/deleteTask/:taskId",(req,res)=>{

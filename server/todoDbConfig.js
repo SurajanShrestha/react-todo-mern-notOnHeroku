@@ -21,6 +21,15 @@ const findAllTasks=(done)=>{
 	});
 };
 
+const updateTask=(done, taskId, newTask)=>{
+	Todo.findOneAndUpdate({ taskId: taskId },{ task: newTask },{new: true},(err, updatedTask)=>{
+		if(err){
+			done(err);
+		}
+		done(null, updatedTask);
+	})
+};
+
 const deleteTask=(done, taskId)=>{
 	Todo.deleteOne({ taskId: taskId },(err, deletedTask)=>{
 		if(err){
@@ -43,5 +52,6 @@ const deleteAllTasks=(done)=>{
 
 exports.createAndSaveTask=createAndSaveTask;
 exports.findAllTasks=findAllTasks;
+exports.updateTask=updateTask;
 exports.deleteTask=deleteTask;
 exports.deleteAllTasks=deleteAllTasks;

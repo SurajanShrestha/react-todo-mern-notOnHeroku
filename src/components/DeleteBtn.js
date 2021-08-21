@@ -7,7 +7,7 @@ function DeleteBtn({startLoading, taskId}){
 			startLoading();
 		})
 		.catch(error=>{
-			console.log(error);
+			alert(error);
 		})
 	};
 	return <button className="redBtn" onClick={handleDelete}>Delete</button>;

@@ -15,7 +15,7 @@ function AddTodoComponent({startLoading}) {
             addTaskField.current.value="";
         })
         .catch(error=>{
-            console.log(error);
+            alert(error);
         });
     };
 

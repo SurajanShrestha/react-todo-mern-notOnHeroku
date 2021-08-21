@@ -7,7 +7,7 @@ function DeleteAllBtn({startLoading}){
 			startLoading();
 		})
 		.catch(error=>{
-			console.log(error);
+			alert(error);
 		})
 	};
 	return <button className="redBtn" onClick={handleDeleteAll}>Delete all</button>;

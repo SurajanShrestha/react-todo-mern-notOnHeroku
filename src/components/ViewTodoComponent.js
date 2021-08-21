@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import UpdateBtn from './UpdateBtn';
 import DeleteBtn from './DeleteBtn';
 
 function ViewTodoComponent({isLoading, startLoading, stopLoading}) {
@@ -15,7 +16,7 @@ function ViewTodoComponent({isLoading, startLoading, stopLoading}) {
             stopLoading();
         })
         .catch(error=>{
-            console.log(error);
+            alert(error);
         });
     },[isLoading]);
 
@@ -25,7 +26,7 @@ function ViewTodoComponent({isLoading, startLoading, stopLoading}) {
                 todos.length===0 ?
                 <p>You have no Tasks to do.</p> :
                 todos.map(todo=>{
-                    return <p id={todo.taskId} className="task" key={todo.taskId}>{todo.task}&emsp;<button className="blueBtn">Update</button>&emsp;<DeleteBtn startLoading={startLoading} taskId={todo.taskId} /></p>;
+                    return <p id={todo.taskId} className="task" key={todo.taskId}>{todo.task}&emsp;<UpdateBtn startLoading={startLoading} taskId={todo.taskId} />&emsp;<DeleteBtn startLoading={startLoading} taskId={todo.taskId} /></p>;
                 })
             }
         </div>
